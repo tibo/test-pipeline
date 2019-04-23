@@ -21,7 +21,9 @@ pipeline {
             }
         }
         stage('After') {
-            echo 'after Parallels'
+            steps { 
+                echo 'after Parallels'
+            }
         }
     }
 }
