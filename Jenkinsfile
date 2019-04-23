@@ -13,11 +13,15 @@ pipeline {
             }
         }
         stage('Parallels') {
-            parallel succed: {
-                echo 'success'
-            },
-            failing: {
-                exit 1
+            steps {
+                parallel(
+                    succed: {
+                        echo 'success'
+                    },
+                    failing: {
+                        exit 1
+                    }
+                )
             }
         }
         stage('After') {
