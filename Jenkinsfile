@@ -19,7 +19,7 @@ pipeline {
             failing: {
                 exit 1
             }
-        },
+        }
         stage('After') {
             echo 'after Parallels'
         }
