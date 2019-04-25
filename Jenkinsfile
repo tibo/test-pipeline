@@ -19,7 +19,7 @@ pipeline {
                         echo 'success'
                     },
                     failing: {
-                        shell("exit 1")
+                        error
                     }
                 )
             }
