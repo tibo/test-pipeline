@@ -26,9 +26,12 @@ pipeline {
                 )
             }
         }
-        stage('After') {
-            steps { 
-                echo 'after Parallels'
+        post {
+            always { 
+                echo 'Always run'
+            }
+            failure {
+                echo 'something went wrong'
             }
         }
     }
