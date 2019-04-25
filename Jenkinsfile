@@ -19,7 +19,9 @@ pipeline {
                         echo 'success'
                     },
                     failing: {
-                        error
+                        sh "hostname"
+                        sh "uptime"
+                        sh "exit 1"
                     }
                 )
             }
