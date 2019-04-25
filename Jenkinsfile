@@ -26,13 +26,18 @@ pipeline {
                 )
             }
         }
-        post {
-            always { 
-                echo 'Always run'
+        stage('After') {
+            steps {
+                echo 'after parallels, this should never run'
             }
-            failure {
-                echo 'something went wrong'
-            }
+        }
+    }
+    post {
+        always { 
+            echo 'Always run'
+        }
+        failure {
+            echo 'something went wrong'
         }
     }
 }
